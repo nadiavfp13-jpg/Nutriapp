@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vida Sana 🌿</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e8f8ee, #f8fff9);
+            color: #24452f;
+            min-height: 100vh;
+        }
+
+        /* ENCABEZADO */
+
+        header {
+            background: linear-gradient(135deg, #54b87a, #2f8f57);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom-left-radius: 35px;
+            border-bottom-right-radius: 35px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+
+        /* CONTENEDOR */
+
+        .container {
+            width: 92%;
+            max-width: 1000px;
+            margin: 25px auto;
+        }
+
+        /* BIENVENIDA */
+
+        .welcome {
+            background: white;
+            padding: 25px;
+            border-radius: 25px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .welcome h2 {
+            color: #2f8f57;
+            margin-bottom: 10px;
+        }
+
+        .welcome p {
+            line-height: 1.6;
+        }
+
+        /* TARJETAS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 25px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            border-color: #72c991;
+            box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+        }
+
+        .card .emoji {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            color: #2f8f57;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* BOTONES */
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 11px 20px;
+            border: none;
+            border-radius: 30px;
+            background: #4caf70;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #267b48;
+            transform: scale(1.05);
+        }
+
+        /* CONSEJO */
+
+        .advice {
+            margin-top: 25px;
+            background: linear-gradient(135deg, #fff5bd, #fff9dc);
+            padding: 25px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .advice h2 {
+            color: #a77b00;
+            margin-bottom: 10px;
+        }
+
+        #dailyAdvice {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+
+        /* RETO */
+
+        .challenge {
+            margin-top: 25px;
+            background: linear-gradient(135deg, #d9f4ff, #effbff);
+            padding: 25px;
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        .challenge h2 {
+            color: #277d9f;
+            margin-bottom: 10px;
+        }
+
+        #challengeText {
+            font-size: 17px;
+            margin: 12px 0;
+        }
+
+        /* PUNTUACIÓN */
+
+        .points {
+            margin-top: 25px;
+            background: white;
+            border-radius: 25px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        #score {
+            color: #2f8f57;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* PIE */
+
+        footer {
+            margin-top: 35px;
+            background: #2f8f57;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+        }
+
+        /* DECORACIÓN */
+
+        .decor {
+            position: fixed;
+            font-size: 25px;
+            opacity: 0.35;
+            z-index: -1;
+        }
+
+        .leaf1 {
+            top: 120px;
+            left: 10px;
+        }
+
+        .leaf2 {
+            top: 350px;
+            right: 10px;
+        }
+
+        .leaf3 {
+            bottom: 100px;
+            left: 20px;
+        }
+
+        .leaf4 {
+            bottom: 250px;
+            right: 20px;
+        }
+
+        /* CELULAR */
+
+        @media(max-width:600px) {
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            .welcome {
+                padding: 20px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- DECORACIONES -->
+
+    <div class="decor leaf1">🌿</div>
+    <div class="decor leaf2">🍃</div>
+    <div class="decor leaf3">🌱</div>
+    <div class="decor leaf4">🍀</div>
+
+
+    <!-- ENCABEZADO -->
+
+    <header>
+
+        <h1>🥗 Vida Sana</h1>
+
+        <p>
+            Pequeños hábitos, grandes cambios 🌿
+        </p>
+
+    </header>
+
+
+    <main class="container">
+
+
+        <!-- BIENVENIDA -->
+
+        <section class="welcome">
+
+            <h2>¡Bienvenido a Vida Sana! 💚</h2>
+
+            <p>
+                Esta aplicación te ayudará a conocer consejos
+                sencillos para mejorar tu alimentación y cuidar
+                tu bienestar.
+            </p>
+
+            <p style="margin-top:10px;">
+                🥦 Come mejor · 💧 Hidrátate · 🏃 Muévete · 😴 Descansa
+            </p>
+
+        </section>
+
+
+        <!-- CATEGORÍAS -->
+
+        <section class="cards">
+
+
+            <div class="card">
+
+                <div class="emoji">🥦</div>
+
+                <h3>Alimentación</h3>
+
+                <p>
+                    Aprende consejos para llevar una
+                    alimentación más equilibrada.
+                </p>
+
+                <button class="btn"
+                    onclick="mostrarAlimentacion()">
+
+                    Ver consejos
+
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="emoji">🍎</div>
+
+                <h3>Alimentos</h3>
+
+                <p>
+                    Descubre diferentes alimentos que
+                    puedes incluir en tus comidas.
+                </p>
+
+                <button class="btn"
+                    onclick="mostrarAlimentos()">
+
+                    Descubrir
+
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="emoji">💧</div>
+
+                <h3>Hidratación</h3>
+
+                <p>
+                    Conoce por qué tomar suficiente agua
+                    es importante para tu organismo.
+                </p>
+
+                <button class="btn"
+                    onclick="mostrarHidratacion()">
+
+                    Aprender
+
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="emoji">🏃</div>
+
+                <h3>Actividad física</h3>
+
+                <p>
+                    Mantente activo y conoce algunas
+                    ideas para moverte durante el día.
+                </p>
+
+                <button class="btn"
+                    onclick="mostrarActividad()">
+
+                    Ver ideas
+
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="emoji">😴</div>
+
+                <h3>Descanso</h3>
+
+                <p>
+                    Dormir bien también forma parte
+                    de un estilo de vida saludable.
+                </p>
+
+                <button class="btn"
+                    onclick="mostrarDescanso()">
+
+                    Ver consejos
+
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="emoji">🧠</div>
+
+                <h3>Bienestar</h3>
+
+                <p>
+                    Cuida tu alimentación y también
+                    tu bienestar físico y mental.
+                </p>
+
+                <button class="btn"
+                    onclick="mostrarBienestar()">
+
+                    Conocer más
+
+                </button>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- CONSEJO DEL DÍA -->
+
+        <section class="advice">
+
+            <h2>💡 Consejo del día</h2>
+
+            <p id="dailyAdvice">
+                Cargando consejo...
+            </p>
+
+            <button class="btn"
+                onclick="nuevoConsejo()">
+
+                🌟 Otro consejo
+
+            </button>
+
+        </section>
+
+
+        <!-- RETO -->
+
+        <section class="challenge">
+
+            <h2>🎯 Reto saludable</h2>
+
+            <p id="challengeText">
+                Presiona el botón para descubrir tu reto.
+            </p>
+
+            <button class="btn"
+                onclick="nuevoReto()">
+
+                🚀 Obtener reto
+
+            </button>
+
+        </section>
+
+
+        <!-- PUNTOS -->
+
+        <section class="points">
+
+            <h2>⭐ Mis puntos</h2>
+
+            <p style="margin:10px;">
+                Completa retos saludables para ganar puntos.
+            </p>
+
+            <div id="score">
+                0 puntos
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+
+        <p>
+            🌱 Vida Sana — Aprende, cuídate y disfruta
+        </p>
+
+        <p style="margin-top:8px;">
+            💚 Tu salud es importante.
+        </p>
+
+    </footer>
+
+
+
+<script>
+
+    /* ==============================
+       CONSEJOS
+    ============================== */
+
+    const consejos = [
+
+        "🥗 Incluye frutas y verduras variadas en tus comidas.",
+
+        "💧 Recuerda tomar agua durante el día.",
+
+        "🍎 Prefiere alimentos naturales y poco procesados.",
+
+        "🥛 Incluye alimentos variados para obtener diferentes nutrientes.",
+
+        "🍽️ Intenta mantener horarios regulares para tus comidas.",
+
+        "🥜 Las frutas secas y semillas pueden formar parte de una alimentación equilibrada.",
+
+        "🥦 Agrega diferentes colores de frutas y verduras a tu plato.",
+
+        "🚫 Reduce el consumo frecuente de bebidas azucaradas.",
+
+        "🌱 Una alimentación equilibrada debe ser variada.",
+
+        "😊 Disfruta tus comidas y evita comer demasiado rápido."
+
+    ];
+
+
+    function nuevoConsejo() {
+
+        let numero =
+            Math.floor(Math.random() * consejos.length);
+
+        document.getElementById("dailyAdvice").innerText =
+            consejos[numero];
+
+    }
+
+
+    /* ==============================
+       RETOS
+    ============================== */
+
+    const retos = [
+
+        "💧 Toma agua durante el día.",
+
+        "🍎 Come una fruta durante el día.",
+
+        "🥦 Incluye una verdura en tu próxima comida.",
+
+        "🚶 Camina durante unos minutos.",
+
+        "😴 Intenta dormir a una hora adecuada.",
+
+        "🥤 Elige agua en lugar de una bebida azucarada.",
+
+        "🍽️ Come tu próxima comida sin utilizar el celular.",
+
+        "🌱 Prueba un alimento saludable que normalmente no consumes."
+
+    ];
+
+
+    let puntos = 0;
+
+
+    function nuevoReto() {
+
+        let numero =
+            Math.floor(Math.random() * retos.length);
+
+        document.getElementById("challengeText").innerText =
+            retos[numero];
+
+        puntos += 5;
+
+        document.getElementById("score").innerText =
+            puntos + " puntos";
+
+    }
+
+
+    /* ==============================
+       VENTANAS DE INFORMACIÓN
+    ============================== */
+
+    function mostrarAlimentacion() {
+
+        alert(
+            "🥗 CONSEJOS DE ALIMENTACIÓN\n\n" +
+
+            "• Come una variedad de alimentos.\n" +
+            "• Incluye frutas y verduras.\n" +
+            "• Prefiere alimentos naturales.\n" +
+            "• Mantén horarios regulares.\n" +
+            "• Disfruta tus comidas con tranquilidad."
+        );
+
+    }
+
+
+    function mostrarAlimentos() {
+
+        alert(
+            "🍎 ALIMENTOS RECOMENDADOS\n\n" +
+
+            "🥦 Verduras\n" +
+            "🍎 Frutas\n" +
+            "🥚 Huevos\n" +
+            "🐟 Pescado\n" +
+            "🥛 Lácteos\n" +
+            "🥜 Frutos secos\n" +
+            "🌾 Cereales integrales\n" +
+            "🫘 Legumbres"
+        );
+
+    }
+
+
+    function mostrarHidratacion() {
+
+        alert(
+            "💧 HIDRATACIÓN\n\n" +
+
+            "El agua es importante para mantener " +
+            "el funcionamiento adecuado del organismo.\n\n" +
+
+            "💧 Lleva una botella de agua.\n" +
+            "💧 Toma agua durante el día.\n" +
+            "💧 Prefiere agua frente a bebidas muy azucaradas."
+        );
+
+    }
+
+
+    function mostrarActividad() {
+
+        alert(
+            "🏃 ACTIVIDAD FÍSICA\n\n" +
+
+            "• Camina.\n" +
+            "• Baila.\n" +
+            "• Practica algún deporte.\n" +
+            "• Usa las escaleras cuando sea posible.\n" +
+            "• Realiza pausas activas durante el estudio."
+        );
+
+    }
+
+
+    function mostrarDescanso() {
+
+        alert(
+            "😴 DESCANSO\n\n" +
+
+            "Dormir y descansar adecuadamente ayuda " +
+            "a recuperar energía.\n\n" +
+
+            "🌙 Mantén horarios regulares.\n" +
+            "📱 Reduce el uso de pantallas antes de dormir.\n" +
+            "🛏️ Procura tener un ambiente tranquilo."
+        );
+
+    }
+
+
+    function mostrarBienestar() {
+
+        alert(
+            "🧠 BIENESTAR\n\n" +
+
+            "Cuidar tu salud también significa cuidar " +
+            "tus emociones.\n\n" +
+
+            "😊 Dedica tiempo para descansar.\n" +
+            "👨‍👩‍👧 Comparte con personas importantes.\n" +
+            "🎨 Realiza actividades que disfrutes.\n" +
+            "🌿 Busca momentos de tranquilidad."
+        );
+
+    }
+
+
+    /* CONSEJO INICIAL */
+
+    nuevoConsejo();
+
+</script>
+
+</body>
+  </html><!-- ==========================================
+     QUIZ DE ALIMENTACIÓN SALUDABLE
+========================================== -->
+
+<section class="quiz-section">
+
+    <div class="quiz-header">
+
+        <span class="quiz-icon">🧠</span>
+
+        <h2>Quiz Saludable</h2>
+
+        <p>
+            Pon a prueba cuánto sabes sobre
+            alimentación y hábitos saludables.
+        </p>
+
+    </div>
+
+
+    <div class="quiz-card">
+
+        <div class="quiz-progress">
+
+            <div id="quizProgressBar"></div>
+
+        </div>
+
+        <p id="quizNumber">
+            Pregunta 1 de 10
+        </p>
+
+
+        <h3 id="quizQuestion">
+            Cargando pregunta...
+        </h3>
+
+
+        <div id="quizAnswers">
+
+            <!-- Las respuestas aparecerán aquí -->
+
+        </div>
+
+
+        <div id="quizMessage"></div>
+
+
+        <button
+            id="nextQuestion"
+            class="quiz-next"
+            onclick="siguientePregunta()"
+            style="display:none;">
+
+            Siguiente ➜
+
+        </button>
+
+    </div>
+
+
+    <div class="quiz-score">
+
+        <span>⭐</span>
+
+        <strong id="quizScore">
+            0
+        </strong>
+
+        <p>
+            puntos
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     RESULTADO DEL QUIZ
+========================================== -->
+
+<section
+    id="quizResult"
+    class="result-section"
+    style="display:none;">
+
+    <div class="result-card">
+
+        <div id="resultEmoji">
+            🎉
+        </div>
+
+        <h2 id="resultTitle">
+            ¡Quiz terminado!
+        </h2>
+
+        <p id="resultText">
+            Has completado el quiz.
+        </p>
+
+        <div class="final-score">
+
+            <span id="finalScore">
+                0
+            </span>
+
+            <small>
+                puntos
+            </small>
+
+        </div>
+
+
+        <button
+            class="restart-btn"
+            onclick="reiniciarQuiz()">
+
+            🔄 Intentar nuevamente
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<style>
+
+/* ==========================================
+   SECCIÓN DEL QUIZ
+========================================== */
+
+.quiz-section {
+
+    margin-top: 30px;
+
+    padding: 30px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e6f8ec,
+            #f7fff9
+        );
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.08);
+
+}
+
+
+/* ENCABEZADO */
+
+.quiz-header {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+}
+
+.quiz-icon {
+
+    font-size: 55px;
+
+}
+
+.quiz-header h2 {
+
+    margin-top: 10px;
+
+    font-size: 30px;
+
+    color: #267b48;
+
+}
+
+.quiz-header p {
+
+    margin-top: 8px;
+
+    color: #52715d;
+
+    line-height: 1.5;
+
+}
+
+
+/* TARJETA */
+
+.quiz-card {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.08);
+
+}
+
+
+/* BARRA */
+
+.quiz-progress {
+
+    width: 100%;
+
+    height: 10px;
+
+    background: #e5eee8;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-bottom: 15px;
+
+}
+
+
+#quizProgressBar {
+
+    width: 10%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #52b878,
+            #2f8f57
+        );
+
+    border-radius: 20px;
+
+    transition: 0.5s;
+
+}
+
+
+/* NÚMERO */
+
+#quizNumber {
+
+    text-align: center;
+
+    color: #59916b;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* PREGUNTA */
+
+#quizQuestion {
+
+    text-align: center;
+
+    font-size: 20px;
+
+    line-height: 1.5;
+
+    color: #24452f;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* RESPUESTAS */
+
+#quizAnswers {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+.answer-btn {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: 2px solid #dceee2;
+
+    border-radius: 15px;
+
+    background: #f9fffb;
+
+    color: #315b3d;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition: 0.3s;
+
+}
+
+
+.answer-btn:hover {
+
+    background: #e8f8ed;
+
+    border-color: #5abb78;
+
+    transform: translateX(4px);
+
+}
+
+
+.answer-btn.correct {
+
+    background: #d9f5df;
+
+    border-color: #40a960;
+
+    color: #17652f;
+
+}
+
+
+.answer-btn.incorrect {
+
+    background: #ffe0e0;
+
+    border-color: #df6666;
+
+    color: #9b2929;
+
+}
+
+
+.answer-btn:disabled {
+
+    cursor: not-allowed;
+
+}
+
+
+/* MENSAJE */
+
+#quizMessage {
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-weight: bold;
+
+    min-height: 24px;
+
+}
+
+
+/* BOTÓN SIGUIENTE */
+
+.quiz-next {
+
+    display: block;
+
+    margin: 20px auto 0;
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #2f8f57;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+
+}
+
+
+.quiz-next:hover {
+
+    background: #216c40;
+
+    transform: scale(1.05);
+
+}
+
+
+/* PUNTOS */
+
+.quiz-score {
+
+    margin: 20px auto 0;
+
+    width: 180px;
+
+    background: white;
+
+    padding: 15px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.06);
+
+}
+
+
+.quiz-score span {
+
+    font-size: 25px;
+
+}
+
+
+#quizScore {
+
+    color: #2f8f57;
+
+    font-size: 25px;
+
+}
+
+
+.quiz-score p {
+
+    color: #6a7d6e;
+
+}
+
+
+/* ==========================================
+   RESULTADO
+========================================== */
+
+.result-section {
+
+    margin-top: 25px;
+
+}
+
+
+.result-card {
+
+    max-width: 500px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.1);
+
+}
+
+
+#resultEmoji {
+
+    font-size: 65px;
+
+    margin-bottom: 10px;
+
+}
+
+
+#resultTitle {
+
+    color: #2f8f57;
+
+    font-size: 27px;
+
+}
+
+
+#resultText {
+
+    margin-top: 10px;
+
+    color: #5c6d61;
+
+    line-height: 1.5;
+
+}
+
+
+.final-score {
+
+    margin: 25px auto;
+
+    width: 150px;
+
+    height: 150px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d9f5e1,
+            #effff3
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+#finalScore {
+
+    font-size: 40px;
+
+    font-weight: bold;
+
+    color: #2f8f57;
+
+}
+
+
+.final-score small {
+
+    color: #56705d;
+
+}
+
+
+.restart-btn {
+
+    border: none;
+
+    padding: 13px 25px;
+
+    border-radius: 25px;
+
+    background: #4caf70;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+
+}
+
+
+.restart-btn:hover {
+
+    background: #267b48;
+
+    transform: scale(1.05);
+
+}
+
+
+</style>
+
+
+
+<script>
+
+/* ==========================================
+   PREGUNTAS DEL QUIZ
+========================================== */
+
+const preguntasQuiz = [
+
+    {
+        pregunta:
+            "¿Cuál de estos alimentos es una fruta?",
+
+        respuestas: [
+            "🍎 Manzana",
+            "🍟 Papas fritas",
+            "🍬 Caramelo",
+            "🥤 Gaseosa"
+        ],
+
+        correcta: 0
+    },
+
+
+    {
+        pregunta:
+            "¿Qué bebida es una buena opción para hidratarse?",
+
+        respuestas: [
+            "🥤 Gaseosa",
+            "💧 Agua",
+            "🍭 Bebida muy azucarada",
+            "⚡ Bebida energética"
+        ],
+
+        correcta: 1
+    },
+
+
+    {
+        pregunta:
+            "¿Qué debemos incluir con frecuencia en nuestra alimentación?",
+
+        respuestas: [
+            "🥦 Frutas y verduras",
+            "🍬 Solo dulces",
+            "🍟 Solo comida rápida",
+            "🥤 Solo bebidas"
+        ],
+
+        correcta: 0
+    },
+
+
+    {
+        pregunta:
+            "¿Cuál de estos alimentos pertenece al grupo de las legumbres?",
+
+        respuestas: [
+            "🍎 Manzana",
+            "🥕 Zanahoria",
+            "🫘 Lentejas",
+            "🍞 Pan"
+        ],
+
+        correcta: 2
+    },
+
+
+    {
+        pregunta:
+            "¿Cuál de estos hábitos favorece una vida saludable?",
+
+        respuestas: [
+            "🏃 Realizar actividad física",
+            "🛋️ No moverse durante todo el día",
+            "🌙 Dormir muy poco",
+            "🍬 Comer dulces constantemente"
+        ],
+
+        correcta: 0
+    },
+
+
+    {
+        pregunta:
+            "¿Por qué es importante tomar agua?",
+
+        respuestas: [
+            "💧 Ayuda a mantener la hidratación",
+            "🍬 Porque reemplaza todos los alimentos",
+            "🍟 Porque contiene mucha grasa",
+            "🥤 Porque es una bebida azucarada"
+        ],
+
+        correcta: 0
+    },
+
+
+    {
+        pregunta:
+            "¿Cuál es una buena opción para una merienda?",
+
+        respuestas: [
+            "🍎 Fruta",
+            "🍬 Muchos caramelos",
+            "🍟 Papas fritas todos los días",
+            "🥤 Gaseosa"
+        ],
+
+        correcta: 0
+    },
+
+
+    {
+        pregunta:
+            "¿Qué hábito ayuda a descansar mejor?",
+
+        respuestas: [
+            "📱 Usar el celular toda la noche",
+            "😴 Mantener horarios regulares de sueño",
+            "☕ Tomar bebidas estimulantes antes de dormir",
+            "🌙 Dormir muy pocas horas"
+        ],
+
+        correcta: 1
+    },
+
+
+    {
+        pregunta:
+            "¿Qué significa tener una alimentación variada?",
+
+        respuestas: [
+            "🥗 Comer diferentes tipos de alimentos",
+            "🍬 Comer solamente dulces",
+            "🍟 Comer siempre lo mismo",
+            "🥤 Tomar solo bebidas"
+        ],
+
+        correcta: 0
+    },
+
+
+    {
+        pregunta:
+            "¿Cuál de estos hábitos es recomendable durante el estudio?",
+
+        respuestas: [
+            "💧 Tomar agua y realizar pausas",
+            "🌙 No dormir",
+            "🍬 Comer dulces todo el tiempo",
+            "📱 Estudiar toda la noche sin descansar"
+        ],
+
+        correcta: 0
+    }
+
+];
+
+
+/* ==========================================
+   VARIABLES
+========================================== */
+
+let preguntaActual = 0;
+
+let puntosQuiz = 0;
+
+let respuestaSeleccionada = false;
+
+
+/* ==========================================
+   MOSTRAR PREGUNTA
+========================================== */
+
+function mostrarPregunta() {
+
+    respuestaSeleccionada = false;
+
+    const pregunta =
+        preguntasQuiz[preguntaActual];
+
+
+    document.getElementById(
+        "quizNumber"
+    ).innerText =
+        "Pregunta " +
+        (preguntaActual + 1) +
+        " de " +
+        preguntasQuiz.length;
+
+
+    document.getElementById(
+        "quizQuestion"
+    ).innerText =
+        pregunta.pregunta;
+
+
+    const contenedor =
+        document.getElementById(
+            "quizAnswers"
+        );
+
+
+    contenedor.innerHTML = "";
+
+
+    pregunta.respuestas.forEach(
+        (respuesta, indice) => {
+
+            const boton =
+                document.createElement("button");
+
+
+            boton.className =
+                "answer-btn";
+
+
+            boton.innerText =
+                respuesta;
+
+
+            boton.onclick = function() {
+
+                seleccionarRespuesta(
+                    indice,
+                    boton
+                );
+
+            };
+
+
+            contenedor.appendChild(
+                boton
+            );
+
+        }
+    );
+
+
+    document.getElementById(
+        "quizMessage"
+    ).innerText = "";
+
+
+    document.getElementById(
+        "nextQuestion"
+    ).style.display = "none";
+
+
+    actualizarBarra();
+
+}
+
+
+/* ==========================================
+   SELECCIONAR RESPUESTA
+========================================== */
+
+function seleccionarRespuesta(
+    indice,
+    boton
+) {
+
+    if (respuestaSeleccionada) {
+        return;
+    }
+
+
+    respuestaSeleccionada = true;
+
+
+    const pregunta =
+        preguntasQuiz[preguntaActual];
+
+
+    const botones =
+        document.querySelectorAll(
+            ".answer-btn"
+        );
+
+
+    botones.forEach(
+        (b, i) => {
+
+            b.disabled = true;
+
+
+            if (
+                i === pregunta.correcta
+            ) {
+
+                b.classList.add(
+                    "correct"
+                );
+
+            }
+
+        }
+    );
+
+
+    if (
+        indice === pregunta.correcta
+    ) {
+
+        boton.classList.add(
+            "correct"
+        );
+
+
+        puntosQuiz += 10;
+
+
+        document.getElementById(
+            "quizMessage"
+        ).innerText =
+            "🎉 ¡Correcto! +10 puntos";
+
+
+    } else {
+
+        boton.classList.add(
+            "incorrect"
+        );
+
+
+        document.getElementById(
+            "quizMessage"
+        ).innerText =
+            "💡 No te preocupes. ¡Puedes aprender y volver a intentarlo!";
+
+    }
+
+
+    document.getElementById(
+        "quizScore"
+    ).innerText =
+        puntosQuiz;
+
+
+    document.getElementById(
+        "nextQuestion"
+    ).style.display =
+        "block";
+
+}
+
+
+/* ==========================================
+   SIGUIENTE PREGUNTA
+========================================== */
+
+function siguientePregunta() {
+
+    preguntaActual++;
+
+
+    if (
+        preguntaActual <
+        preguntasQuiz.length
+    ) {
+
+        mostrarPregunta();
+
+    } else {
+
+        terminarQuiz();
+
+    }
+
+}
+
+
+/* ==========================================
+   BARRA DE PROGRESO
+========================================== */
+
+function actualizarBarra() {
+
+    const progreso =
+        (
+            (preguntaActual + 1) /
+            preguntasQuiz.length
+        ) * 100;
+
+
+    document.getElementById(
+        "quizProgressBar"
+    ).style.width =
+        progreso + "%";
+
+}
+
+
+/* ==========================================
+   TERMINAR QUIZ
+========================================== */
+
+function terminarQuiz() {
+
+    document.querySelector(
+        ".quiz-card"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "quizResult"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "finalScore"
+    ).innerText =
+        puntosQuiz;
+
+
+    let titulo =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    let texto =
+        document.getElementById(
+            "resultText"
+        );
+
+
+    let emoji =
+        document.getElementById(
+            "resultEmoji"
+        );
+
+
+    if (puntosQuiz >= 90) {
+
+        emoji.innerText = "🏆";
+
+        titulo.innerText =
+            "¡Excelente!";
+
+        texto.innerText =
+            "Tienes muy buenos conocimientos sobre hábitos saludables. ¡Sigue cuidándote!";
+
+    }
+
+    else if (puntosQuiz >= 60) {
+
+        emoji.innerText = "🌟";
+
+        titulo.innerText =
+            "¡Muy bien!";
+
+        texto.innerText =
+            "Conoces varios hábitos saludables. Sigue aprendiendo para mejorar.";
+
+    }
+
+    else if (puntosQuiz >= 30) {
+
+        emoji.innerText = "🌱";
+
+        titulo.innerText =
+            "¡Buen comienzo!";
+
+        texto.innerText =
+            "Cada pregunta es una oportunidad para aprender algo nuevo.";
+
+    }
+
+    else {
+
+        emoji.innerText = "💚";
+
+        titulo.innerText =
+            "¡Sigue aprendiendo!";
+
+        texto.innerText =
+            "Lo importante es aprender poco a poco y aplicar buenos hábitos.";
+
+    }
+
+}
+
+
+/* ==========================================
+   REINICIAR
+========================================== */
+
+function reiniciarQuiz() {
+
+    preguntaActual = 0;
+
+    puntosQuiz = 0;
+
+    document.getElementById(
+        "quizScore"
+    ).innerText = "0";
+
+
+    document.querySelector(
+        ".quiz-card"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "quizResult"
+    ).style.display = "none";
+
+
+    mostrarPregunta();
+
+}
+
+
+/* INICIAR QUIZ */
+
+mostrarPregunta();
+
+      </script>
